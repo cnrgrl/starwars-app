@@ -1,0 +1,28 @@
+<h3>FILTERS</h3>
+<div class="d-flex flex-column">
+  <select
+    class="form-select mb-3"
+    aria-label="Default select example"
+    (change)="onFilmChange($event)"
+  >
+    <option selected [value]="''">Select a film</option>
+    <ng-container *ngFor="let filmItem of filmList">
+      <option [value]="filmItem.url">
+        {{ filmItem.title }}
+      </option>
+    </ng-container>
+  </select>
+
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    (change)="onSpeciesChange($event)"
+  >
+    <option selected [value]="''">Select a species</option>
+    <ng-container *ngFor="let speciesItem of speciesList">
+      <option [value]="speciesItem.url">
+        {{ speciesItem.name }}
+      </option>
+    </ng-container>
+  </select>
+</div>

@@ -1,0 +1,22 @@
+<h3>DETAILS</h3>
+<div class="card text-bg-light mb-3" *ngIf="isShown">
+  <div class="card-header h3">{{ character.name }}</div>
+  <div class="card-body">
+    <div class="card-text">
+      <div class="row mb-2" style="border-bottom: 1px solid lightgray">
+        <div class="col-4 text-start text-primary">Spezies</div>
+        <div class="col-8 text-start">{{ character.species }}</div>
+      </div>
+      <div class="row mb-2" style="border-bottom: 1px solid lightgray">
+        <div class="col-4 text-start text-primary">Filme</div>
+        <div class="col-8 text-start">
+          {{ character.films }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-start text-primary">Raumschiffe</div>
+        <div class="col-8 text-start">{{ person.vehicles }}</div>
+      </div>
+    </div>
+  </div>
+</div>
