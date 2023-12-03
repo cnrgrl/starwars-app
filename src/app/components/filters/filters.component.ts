@@ -39,6 +39,15 @@ export class FiltersComponent {
         console.log(err);
       },
     });
+    this.apiService.getAllVehicles().subscribe({
+      next: (res) => {
+        this.apiService.setVehiclesList(res);
+        console.log('vehicles', res);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   onFilmChange(event: any) {

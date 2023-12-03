@@ -28,11 +28,10 @@ export class DetailsComponent implements OnChanges {
       if (changes['person'].currentValue !== undefined) {
         this.character.name = this.person.name;
 
-        // this.character.species = [];
         // this.character.vehicles = [];
-        // this.character.films = [];
         this.setCharacterFilmName();
         this.setCharacterSpeciesName();
+        this.setCharacterVehicleName();
         this.isShown = true;
       } else {
         this.isShown = false;
@@ -42,7 +41,6 @@ export class DetailsComponent implements OnChanges {
   setCharacterFilmName() {
     this.character.films = [];
     if (this.person) {
-      // console.log(this.person.films);
       this.person.films.forEach((filmUrl) => {
         const name = this.apiService.findFilmNamesByUrl(filmUrl);
         this.character.films.push(name);
@@ -56,7 +54,16 @@ export class DetailsComponent implements OnChanges {
       this.person.species?.forEach((speciesUrl) => {
         const name = this.apiService.findSpeciesNamesByUrl(speciesUrl);
         this.character.species.push(name);
-        console.log(name);
+      });
+    }
+  }
+  setCharacterVehicleName() {
+    this.character.vehicles = [];
+    if (this.person.vehicles && this.person.vehicles.length > 0) {
+      this.person.vehicles?.forEach((vehicleUrl) => {
+        const name = this.apiService.findVehicleNamesByUrl(vehicleUrl);
+        this.character.vehicles.push(name);
+        console.log('vehicle', name);
       });
     }
   }
