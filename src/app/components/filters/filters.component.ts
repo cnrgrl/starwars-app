@@ -42,7 +42,6 @@ export class FiltersComponent {
     this.apiService.getAllVehicles().subscribe({
       next: (res) => {
         this.apiService.setVehiclesList(res);
-        console.log('vehicles', res);
       },
       error: (err) => {
         console.log(err);
@@ -52,10 +51,8 @@ export class FiltersComponent {
 
   onFilmChange(event: any) {
     this.selectedFilmValue.emit((event.target as HTMLSelectElement).value);
-    console.log((event.target as HTMLSelectElement).value);
   }
   onSpeciesChange(event: any) {
     this.selectedSpeciesValue.emit((event.target as HTMLSelectElement).value);
-    console.log((event.target as HTMLSelectElement).value);
   }
 }

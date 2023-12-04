@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
   }
   selectedFilm(film: string) {
     this.filteredFilm = film;
-    console.log(film);
     this.setFilteredValue();
   }
   selectedSpecies(species: string) {
@@ -68,7 +67,3 @@ export class AppComponent implements OnInit {
     this.characterDetail = character;
   }
 }
-// Name: Han Solo
-// Spezies: Mensch
-// Filme: Episode IV, Episode V, Episode VI, Episode VII
-// Raumschiffe: Millennium, Falke, Imperiale Raumfähre.

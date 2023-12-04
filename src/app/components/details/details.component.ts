@@ -23,7 +23,6 @@ export class DetailsComponent implements OnChanges {
   constructor(private apiService: ApiServiceService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
     if (changes['person']) {
       if (changes['person'].currentValue !== undefined) {
         this.character.name = this.person.name;
@@ -63,7 +62,6 @@ export class DetailsComponent implements OnChanges {
       this.person.vehicles?.forEach((vehicleUrl) => {
         const name = this.apiService.findVehicleNamesByUrl(vehicleUrl);
         this.character.vehicles.push(name);
-        console.log('vehicle', name);
       });
     }
   }
